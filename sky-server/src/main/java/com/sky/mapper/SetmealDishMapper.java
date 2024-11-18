@@ -22,4 +22,19 @@ public interface SetmealDishMapper {
      * @param setmealDishes
      */
     void saveSetmaelDishes(List<SetmealDish> setmealDishes);
+
+    /**
+     * 根据套餐id删除套餐菜品
+     * @param setmealIds
+     */
+    void deleteBySetmealId(List<Long> setmealIds);
+
+    /**
+     * 根据套餐id查询套餐菜品
+     * @param id
+     * @return
+     */
+    @Select("select * from setmeal_dish where setmeal_id = #{id}")
+    List<SetmealDish> getBySetmealId(Long id);
+
 }

@@ -9,6 +9,13 @@
         </foreach>
     </insert>
 
+    <delete id="deleteBySetmealId">
+        delete from setmeal_dish where setmeal_id in
+        <foreach collection="list" item="setmealId" open="(" close=")" separator=",">
+            #{setmealId}
+        </foreach>
+    </delete>
+
     <select id="getSetMealIdByDishIds" resultType="java.lang.Long">
         select setmeal_id from setmeal_dish where dish_id in
          <foreach collection="list"  item="dishId" separator="," open="(" close=")">
