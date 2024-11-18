@@ -129,6 +129,6 @@ public class SetmealServicelmpl implements SetmealService {
             });
         }
         Setmeal setmeal = Setmeal.builder().id(id).status(status).build();
-        setmealMapper.update(setmeal  );
+        setmealMapper.update(setmeal);
     }
 }
